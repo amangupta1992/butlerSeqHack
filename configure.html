@@ -1,0 +1,447 @@
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+          <meta name="description" content="">
+          <meta name="author" content="">
+          <link rel="icon" href="../../favicon.ico">
+
+          <title>Butler</title>
+
+          <!-- Bootstrap core CSS -->
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+        </head>
+
+        <body>
+
+          <!-- Static navbar -->
+          <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Butler</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                  <li><a href="index.html">Dashboard<span class="sr-only">(current)</span></a></li>
+                  <li><a href="issueTracker.html">Issue Tracker</a></li>
+                  <li class="active"><a href="configure.html">Configure</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col-lg-2">
+                  <div class="input-group">
+                    <label for="conName">Rule Name:</label>
+                    <input type="text" class="form-control" placeholder="Rule name" id="name">
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="input-group">
+                    <label for="conName">Condition:</label>
+                    <input type="text" class="form-control" placeholder="Condition name" id="conName">
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <label for="entity">Entity:</label>
+                    <select class="form-control" id="entity">
+                      <option value ="ADD_TO_CART"> Add to cart</option>
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                  <label for="dimension">Dimension:</label>
+                    <select class="form-control" id="dimension">
+                      <option value ="TIME">Time</option>
+                      <option value ="OCCURRENCES">Occurrences</option>
+                    </select>
+                </div>
+                <div class="col-lg-1">
+                  <label for="operator">Operator:</label>
+                    <select class="form-control" id="operator">
+                      <option value =">">></option>
+                      </select>
+                </div>
+                <div class="col-lg-1">
+                  <label>Value:</label>
+                  <input id="value" type="number"  class="form-control" placeholder="value">
+                </div>
+                <div class="col-lg-2">
+                  <label>Email Ids:</label>
+                  <input id="emails" type="text"  class="form-control" placeholder="Email Ids:">
+                </div>
+              </div>
+          <label class="col-lg-12 control-label">Yes action:</label>
+            <div class="yes">
+              <div class="form-group">
+                  <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <div class="form-group">
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">Name:</label>
+                                    <input type="text" class="form-control" placeholder="name" id="yesName">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-2">
+                                  <label for="entity">Entity:</label>
+                                    <select class="form-control" id="entity">
+                                      <option value ="SHOW_USER_OPTIONS"> SHOW_USER_OPTIONS</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">URL:</label>
+                                    <input type="text" class="form-control" placeholder="URL" id="yesURL">
+                                  </div>
+                                </div>
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">Title:</label>
+                                    <input type="text" class="form-control" placeholder="URL" id="yesTitle">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">Description:</label>
+                                    <input type="text" class="form-control" placeholder="URL" id="yesDescription">
+                                  </div>
+                                </div>  
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">key1</label>
+                                    <input type="text" class="form-control" placeholder="key1" id="key1">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">val1</label>
+                                    <input type="text" class="form-control" placeholder="val1" id="val1">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">key2</label>
+                                    <input type="text" class="form-control" placeholder="key2" id="key2">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">val2</label>
+                                    <input type="text" class="form-control" placeholder="val2" id="val2">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <label for="entity">Dimension:</label>
+                                    <select class="form-control" id="dimension">
+                                      <option value ="BUTLER_POP"> Butler pop</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-1">
+                                  <label for="entity"> </label>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-danger" type="button" onclick="removeYesRow(this);">
+                                          <span class="glyphicon glyphicon-minus"></span>
+                                      </button>
+                                  </span>
+                                </div>
+
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <button type="button" class="btn btn-success btn-sm" onclick="addYesRow(this);">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          <label class="col-lg-12 control-label">No action:</label>
+            <div class="no">
+              <div class="form-group">
+                  <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <div class="form-group">
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">Name:</label>
+                                    <input type="text" class="form-control" placeholder="name" id="yesName">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-2">
+                                  <label for="entity">Entity:</label>
+                                    <select class="form-control" id="entity">
+                                      <option value ="SHOW_USER_OPTIONS"> SHOW_USER_OPTIONS</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">URL:</label>
+                                    <input type="text" class="form-control" placeholder="URL" id="yesURL">
+                                  </div>
+                                </div>
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">Title:</label>
+                                    <input type="text" class="form-control" placeholder="URL" id="yesTitle">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">Description:</label>
+                                    <input type="text" class="form-control" placeholder="URL" id="yesDescription">
+                                  </div>
+                                </div>  
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">key1</label>
+                                    <input type="text" class="form-control" placeholder="key1" id="key1">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">val1</label>
+                                    <input type="text" class="form-control" placeholder="val1" id="val1">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">key2</label>
+                                    <input type="text" class="form-control" placeholder="key2" id="key2">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <div class="input-group">
+                                    <label for="conName">val2</label>
+                                    <input type="text" class="form-control" placeholder="val2" id="val2">
+                                  </div>
+                                </div> 
+                                <div class="col-lg-1">
+                                  <label for="entity">Dimension:</label>
+                                    <select class="form-control" id="dimension">
+                                      <option value ="BUTLER_POP"> Butler pop</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-1">
+                                  <label for="entity"> </label>
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-danger" type="button" onclick="removeYesRow(this);">
+                                          <span class="glyphicon glyphicon-minus"></span>
+                                      </button>
+                                  </span>
+                                </div>
+
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <button type="button" class="btn btn-success btn-sm" onclick="addNoRow(this);">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+                <div class="col-sm-offset-2 col-sm-5">
+                  <button id="submitButton" class="btn btn-default">Submit</button>
+                </div>
+          </form>
+          <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+              <tr>
+                  <th>RuleName</th>
+                  <th>conditionEntity</th>
+                  <th>conditionType</th>
+                  <th>conditionName</th>
+                  <th>conditionDimension</th>
+                  <th>conditionEmails</th>
+                  <th>conditionValue</th>
+                  <th>yesActionName</th>
+                  <th>actionEntity</th>
+                  <th>title</th>
+                  <th>description</th>
+                  <th>actionUrl</th>
+                  <th>optionName</th>
+                  <th>optionUrl</th>
+                  <th>optionName</th>
+                  <th>optionUrl</th>
+                  <th>actionDimension</th>
+              </tr>
+          </thead>
+          <tbody id="table-body">
+          </tbody>
+          </table>    
+
+         </div> <!-- /container -->
+
+          <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script>
+            function addNoRow(button) {
+              var addNo = '<div class="col-lg-12"><div class="form-group"><div class="col-lg-1"><div class="input-group"><label for="conName">Name:</label><input type="text" class="form-control" placeholder="name" id="yesName"></div></div><div class="col-lg-2"><label for="entity">Entity:</label><select class="form-control" id="entity"><option value ="SHOW_USER_OPTIONS"> SHOW_USER_OPTIONS</option></select></div><div class="col-lg-1"><div class="input-group"><label for="conName">URL:</label><input type="text" class="form-control" placeholder="URL" id="yesURL"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">Title:</label><input type="text" class="form-control" placeholder="URL" id="yesTitle"></div></div> <div class="col-lg-1"><div class="input-group"><label for="conName">Description:</label><input type="text" class="form-control" placeholder="URL" id="yesDescription"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">key1</label><input type="text" class="form-control" placeholder="key1" id="key1"></div></div> <div class="col-lg-1"><div class="input-group"><label for="conName">val1</label><input type="text" class="form-control" placeholder="val1" id="val1"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">key2</label><input type="text" class="form-control" placeholder="key2" id="key2"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">val2</label><input type="text" class="form-control" placeholder="val2" id="val2"></div></div> <div class="col-lg-1"><label for="entity">Dimension:</label><select class="form-control" id="dimension"><option value ="BUTLER_POP"> Butler pop</option></select></div><div class="col-lg-1"><label for="entity"> </label><span class="input-group-btn"><button class="btn btn-danger" type="button" onclick="removeYesRow(this);"><span class="glyphicon glyphicon-minus"></span></button></span></div></div></div>' + " \n";
+          $(addNo).insertBefore($(button).parent());
+      }
+      function removeNoRow(button) {
+          $(button).parent().parent().parent().remove();
+      }
+      function addYesRow(button) {
+          var addYes = '<div class="col-lg-12"><div class="form-group"><div class="col-lg-1"><div class="input-group"><label for="conName">Name:</label><input type="text" class="form-control" placeholder="name" id="yesName"></div></div><div class="col-lg-2"><label for="entity">Entity:</label><select class="form-control" id="entity"><option value ="SHOW_USER_OPTIONS"> SHOW_USER_OPTIONS</option></select></div><div class="col-lg-1"><div class="input-group"><label for="conName">URL:</label><input type="text" class="form-control" placeholder="URL" id="yesURL"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">Title:</label><input type="text" class="form-control" placeholder="URL" id="yesTitle"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">Description:</label><input type="text" class="form-control" placeholder="URL" id="yesDescription"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">key1</label><input type="text" class="form-control" placeholder="key1" id="key1"></div></div> <div class="col-lg-1"><div class="input-group"><label for="conName">val1</label><input type="text" class="form-control" placeholder="val1" id="val1"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">key2</label><input type="text" class="form-control" placeholder="key2" id="key2"></div></div><div class="col-lg-1"><div class="input-group"><label for="conName">val2</label><input type="text" class="form-control" placeholder="val2" id="val2"></div></div> <div class="col-lg-1"><label for="entity">Dimension:</label><select class="form-control" id="dimension"><option value ="BUTLER_POP"> Butler pop</option></select></div><div class="col-lg-1"><label for="entity"> </label><span class="input-group-btn"><button class="btn btn-danger" type="button" onclick="removeYesRow(this);"><span class="glyphicon glyphicon-minus"></span></button></span></div></div></div>' + " \n";
+          $(addYes).insertBefore($(button).parent());
+      }
+      function removeYesRow(button) {
+          $(button).parent().parent().parent().remove();
+      }
+      $(document).ready(function(){
+        $.ajax({url: "http://qa.goplus.in/sh/rules?clientId=1", success: function(result){
+          var tableData = "";
+          $.each(result.rules, function(i, item) {
+            tableData = tableData + "<tr><td>"+ nullSafe(item.name)+"</td>";
+            if (item.ruleCondition == undefined || item.ruleCondition == null) {
+              ruleCondition = "";
+            } else {
+              ruleCondition = item.ruleCondition;
+            }
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEntity) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionType) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionName) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionDimension) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEmails) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionValue) + "</td>";
+            
+            if (item.yesActions == undefined || item.yesActions == null) {
+              yesActions = new Array();
+            } else {
+              yesActions = item.yesActions;
+            }
+            if (yesActions[0] == undefined || yesActions[0] == null) {
+              yesActionsRow = "";
+            } else {
+              yesActionsRow = yesActions[0];
+            }
+            tableData = tableData + "<td>"+ nullSafe(yesActionsRow.actionName) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(yesActionsRow.actionEntity) + "</td>";
+            if (yesActionsRow.actionEntityData == undefined || yesActionsRow.actionEntityData == null) {
+              yesActionEntityData = "";
+            } else {
+              yesActionEntityData = yesActionsRow.actionEntityData;
+            }
+
+            tableData = tableData + "<td>"+ nullSafe(yesActionEntityData.title) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(yesActionEntityData.description) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(yesActionEntityData.actionUrl) + "</td>";
+            
+            if (yesActionEntityData.optionDataList == undefined || yesActionEntityData.optionDataList == null) {
+              yesOptionData = new Array();
+            } else {
+              yesOptionData = yesActionEntityData.optionDataList;
+            }
+            if (yesOptionData[0] == undefined || yesOptionData[0] == null) {
+              tableData = tableData + "<td></td><td></td>";
+            } else {
+              tableData = tableData + "<td>"+ nullSafe(yesOptionData[0].optionName) + "</td>";
+              tableData = tableData + "<td>"+ nullSafe(yesOptionData[0].optionUrl) + "</td>";
+            }
+            if (yesOptionData[1] == undefined || yesOptionData[1] == null) {
+              tableData = tableData + "<td></td><td></td>";
+            } else {
+              tableData = tableData + "<td>"+ nullSafe(yesOptionData[1].optionName) + "</td>";
+              tableData = tableData + "<td>"+ nullSafe(yesOptionData[1].optionUrl) + "</td>";
+            }
+            
+            tableData = tableData + "<td>"+ nullSafe(yesActionsRow.actionDimension) + "</td>";
+            
+            tableData = tableData + "</tr>";
+          });
+          $('#table-body').append(tableData);
+          
+          function nullSafe(item) {
+              return item = (item == null) ? '' : item;
+          }
+          }});
+        $("#submitButton").click(function(){
+              console.log($("#conName").val());
+              console.log($("#entity").val());
+              console.log($("#dimension").val());
+              console.log($("#operator").val());
+              console.log($("#value").val());
+              console.log($("#emails").val());
+              var yesConditions = new Array();
+              $(".yes .col-lg-12").each(function( index ) {
+                console.log($(this).find("#yesName").val());
+                console.log($(this).find("#entity").val());
+                console.log($(this).find("#yesURL").val());
+                console.log($(this).find("#key1").val());
+                console.log($(this).find("#val1").val());
+                console.log($(this).find("#key2").val());
+                console.log($(this).find("#val2").val());
+                console.log($(this).find("#dimension").val());
+                var key1 = '"' + $(this).find("#key1").val() + '"';
+                var key2 = '"' + $(this).find("#key2").val() + '"';
+                console.log(key1);
+                console.log(key2);
+                var myMap = {}; 
+                myMap[key1] = $(this).find("#val1").val();
+                myMap[key2] = $(this).find("#val2").val();
+                if ($("#yesName").val() != undefined) {
+                  var yesCondition =  {"actionName": $("#yesName").val(), "actionEntity": $(this).find("#entity").val(), "actionEntityData": {"actionUrl": $("#yesURL").val(),"title": $("#yesTitle").val(),"description": $("#yesDescription").val(), "options": myMap}, "actionDimension": $(this).find("#dimension").val()};
+                  yesConditions.push(yesCondition);
+                }
+
+              });
+              var noConditions = new Array();
+              $(".no .col-lg-12").each(function( index ) {
+                console.log($(this).find("#yesName").val());
+                console.log($(this).find("#entity").val());
+                console.log($(this).find("#yesURL").val());
+                console.log($(this).find("#key1").val());
+                console.log($(this).find("#val1").val());
+                console.log($(this).find("#key2").val());
+                console.log($(this).find("#val2").val());
+                console.log($(this).find("#dimension").val());
+                var key1 = '"' + $(this).find("#key1").val() + '"';
+                var key2 = '"' + $(this).find("#key2").val() + '"';
+                console.log(key1);
+                console.log(key2);
+                var myMap = {}; 
+                myMap[key1] = $(this).find("#val1").val();
+                myMap[key2] = $(this).find("#val2").val();
+                 if ($("#yesName").val() != undefined) {
+                  var noCondition = {"actionName": $("#yesName").val(), "actionEntity":$(this).find("#entity").val(), "actionEntityData": {"actionUrl": $("#yesURL").val(), "title": $("#yesTitle").val(),"description": $("#yesDescription").val(), "options": myMap}, "actionDimension": $(this).find("#dimension").val()};
+                  noConditions.push(noCondition);
+                }
+              });
+              var ruleCondition = {"conditionEntity": $("#entity").val(), "conditionName": $("#conName").val(), "conditionDimension": $("#dimension").val(), "conditionValue": $("#value").val(), "conditionEmails": $("#emails").val()};
+              
+              var URL = "http://qa.goplus.in/sh/rule";
+              var postData = {"name":name.val(), "ruleCondition": ruleCondition , "yesActions" : yesConditions, "noActions" :noConditions };
+              $.ajax({
+                type: "POST",
+                url: URL,
+                data: JSON.stringify(postData),
+                contentType: "application/json",
+                dataType: "json",
+                async: false
+              });
+        });
+      });
+          </script>
+        </body>
+      </html>
