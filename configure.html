@@ -431,7 +431,7 @@
               var ruleCondition = {"conditionEntity": $("#entity").val(), "conditionName": $("#conName").val(), "conditionDimension": $("#dimension").val(), "conditionValue": $("#value").val(), "conditionEmails": $("#emails").val()};
               
               var URL = "http://qa.goplus.in/sh/rule";
-              var postData = {$("#name").val(), "ruleCondition": ruleCondition , "yesActions" : yesConditions, "noActions" :noConditions };
+              var postData = {"name":$("#name").val(), "ruleCondition": ruleCondition , "yesActions" : yesConditions, "noActions" :noConditions };
               $.ajax({
                 type: "POST",
                 url: URL,
