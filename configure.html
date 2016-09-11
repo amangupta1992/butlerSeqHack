@@ -189,7 +189,7 @@
           <script src="js/bootstrap.min.js"></script>
           <script>
       $(document).ready(function(){
-        $.ajax({url: "http://qa.goplus.in/sh/rules?clientId=1", success: function(result){
+        $.ajax({url: "http://qa.goplus.in/sh/rules?clientId=1&dashboardRequest=true", success: function(result){
           var tableData = "";
           $.each(result.rules, function(i, item) {
             tableData = tableData + "<tr><td>"+ nullSafe(item.name)+"</td>";
