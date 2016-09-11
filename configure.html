@@ -59,9 +59,9 @@
                 <div class="col-lg-2">
                   <label for="entity">Event</label>
                     <select class="form-control" id="entity">
-                      <option value ="ADD_TO_CART">Add to cart</option>
-                      <option value ="CART_PAGE">Cart Page</option>
-                      <option value ="SIZE_VIEW">Size view</option>
+                      <option value ="ADD_TO_CART">ADD_TO_CART</option>
+                      <option value ="CART_PAGE">CART_PAGE</option>
+                      <option value ="SIZE_VIEW">SIZE_VIEW</option>
                     </select>
                 </div>
                 <div class="col-lg-2">
@@ -199,7 +199,7 @@
             } else {
               ruleCondition = item.ruleCondition;
             }
-            tableData = tableData + "<td>"+ eventParse(nullSafe(ruleCondition.conditionEntity)) + "</td>";
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEntity) + "</td>";
             tableData = tableData + "<td>"+ eventTypeParse(nullSafe(ruleCondition.conditionType)) + "</td>";
             tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionDimension) + "</td>";
             tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionValue) + "</td>";
@@ -254,17 +254,6 @@
           
           function nullSafe(item) {
               return item = (item == null) ? '' : item;
-          }
-          function eventParse(item) {
-              if (item == "SIZE_VIEW" ) {
-                return "Size view";
-              } else if (item == "CART_PAGE") {
-                return "Cart Page"
-              }  else if (item == "ADD_TO_CART") {
-                return "Add to Cart";
-              } else {
-                return item;
-              }       
           }
           function eventTypeParse(item) {
               if (item == "PAGE_VIEW" ) {
