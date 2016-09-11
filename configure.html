@@ -283,11 +283,8 @@
                 myMap[key1] = $(this).find("#val1").val();
                 myMap[key2] = $(this).find("#val2").val();
                 myMap[key3] = $(this).find("#val3").val();
-                if ($("#yesName").val() != undefined) {
-                  var yesCondition =  {"actionEntity": "SHOW_USER_OPTIONS", "actionEntityData": {"title": $("#yesTitle").val(),"description": $("#yesDescription").val(), "options": myMap}, "actionDimension": "BUTLER_POP"};
-                  yesConditions.push(yesCondition);
-                }
-
+                var yesCondition =  {"actionEntity": "SHOW_USER_OPTIONS", "actionEntityData": {"title": $("#yesTitle").val(),"description": $("#yesDescription").val(), "options": myMap}, "actionDimension": "BUTLER_POP"};
+                yesConditions.push(yesCondition);
               });
               var ruleCondition = {"conditionEntity": $("#entity").val(), "conditionType": $("#eventType").val(), "conditionDimension": $("#dimension").val(), "conditionValue": $("#value").val(), "conditionEmails": $("#emails").val()};
               
