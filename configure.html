@@ -199,10 +199,11 @@
             } else {
               ruleCondition = item.ruleCondition;
             }
-            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEntity) + "</td>";
-            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionType) + "</td>";
+            tableData = tableData + "<td>"+ eventParse(nullSafe(ruleCondition.conditionEntity)) + "</td>";
+            tableData = tableData + "<td>"+ eventTypeParse(nullSafe(ruleCondition.conditionType)) + "</td>";
             tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionDimension) + "</td>";
-            
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionValue) + "</td>";
+
             if (item.yesActions == undefined || item.yesActions == null) {
               yesActions = new Array();
             } else {
@@ -254,6 +255,26 @@
           function nullSafe(item) {
               return item = (item == null) ? '' : item;
           }
+          function eventParse(item) {
+              if (item == "SIZE_VIEW" ) {
+                return "Size view";
+              } else if (item == "CART_PAGE") {
+                return "Cart Page"
+              }  else if (item == "ADD_TO_CART") {
+                return "Add to Cart";
+              } else {
+                return item;
+              }       
+          }
+          function eventTypeParse(item) {
+              if (item == "PAGE_VIEW" ) {
+                return "Page view";
+              } else if (item == "EVENT") {
+                return "Click"
+              } else {
+                return item;
+              }       
+          }
           }});
         $("#submitButton").click(function(){
               console.log($("#eventType").val());
@@ -276,17 +297,19 @@
                 console.log(key1);
                 console.log(key2);
                 var myMap = {}; 
+                var key1 = $(this).find("#key1").val();
+                var key2 = $(this).find("#key2").val();
+                var key3 = $(this).find("#key3").val();
+
                 if (key1 != undefined && key1 != null && key1 != "" ) {
                   myMap[key1] = $(this).find("#val1").val();
-                  var key1 = $(this).find("#key1").val();
                 }
+
                 if (key2 != undefined && key2 != null && key2 != "" ) {
                   myMap[key2] = $(this).find("#val2").val();
-                  var key2 = $(this).find("#key2").val();
                 }
                 if (key1 != undefined && key1 != null && key1 != "" ) {
                   myMap[key3] = $(this).find("#val3").val();
-                  var key3 = $(this).find("#key3").val();
                 }                
                 var yesCondition =  {"actionEntity": "SHOW_USER_OPTIONS", "actionEntityData": {"title": $("#yesTitle").val(),"description": $("#yesDescription").val(), "options": myMap}, "actionDimension": "BUTLER_POP"};
                 yesConditions.push(yesCondition);
