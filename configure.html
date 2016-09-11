@@ -164,16 +164,17 @@
                   <th>Event</th>
                   <th>Event Type</th>
                   <th>Dimension</th>
-                  <th>Emails</th>
                   <th>Dimension Value</th>
-                  <th>title</th>
-                  <th>description</th>
+                  <th>Title</th>
+                  <th>Description</th>
                   <th>Option 1</th>
                   <th>Value 1</th>
                   <th>Option 2</th>
                   <th>Value 2</th>
                   <th>Option 3</th>
                   <th>Value 3</th>
+                  <th>Emails</th>
+
               </tr>
           </thead>
           <tbody id="table-body">
@@ -201,8 +202,6 @@
             tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEntity) + "</td>";
             tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionType) + "</td>";
             tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionDimension) + "</td>";
-            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEmails) + "</td>";
-            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionValue) + "</td>";
             
             if (item.yesActions == undefined || item.yesActions == null) {
               yesActions = new Array();
@@ -246,7 +245,8 @@
               tableData = tableData + "<td>"+ nullSafe(yesOptionData[2].optionName) + "</td>";
               tableData = tableData + "<td>"+ nullSafe(yesOptionData[2].optionUrl) + "</td>";
             }
-                        
+            tableData = tableData + "<td>"+ nullSafe(ruleCondition.conditionEmails) + "</td>";
+            
             tableData = tableData + "</tr>";
           });
           $('#table-body').append(tableData);
@@ -272,16 +272,22 @@
                 console.log($(this).find("#key2").val());
                 console.log($(this).find("#val2").val());
                 console.log($(this).find("#dimension").val());
-                var key1 = $(this).find("#key1").val();
-                var key2 = $(this).find("#key2").val();
-                var key3 = $(this).find("#key3").val();
                 
                 console.log(key1);
                 console.log(key2);
                 var myMap = {}; 
-                myMap[key1] = $(this).find("#val1").val();
-                myMap[key2] = $(this).find("#val2").val();
-                myMap[key3] = $(this).find("#val3").val();
+                if (key1 != undefined && key1 != null && key1 != "" ) {
+                  myMap[key1] = $(this).find("#val1").val();
+                  var key1 = $(this).find("#key1").val();
+                }
+                if (key2 != undefined && key2 != null && key2 != "" ) {
+                  myMap[key2] = $(this).find("#val2").val();
+                  var key2 = $(this).find("#key2").val();
+                }
+                if (key1 != undefined && key1 != null && key1 != "" ) {
+                  myMap[key3] = $(this).find("#val3").val();
+                  var key3 = $(this).find("#key3").val();
+                }                
                 var yesCondition =  {"actionEntity": "SHOW_USER_OPTIONS", "actionEntityData": {"title": $("#yesTitle").val(),"description": $("#yesDescription").val(), "options": myMap}, "actionDimension": "BUTLER_POP"};
                 yesConditions.push(yesCondition);
               });
